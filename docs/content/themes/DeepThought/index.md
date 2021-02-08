@@ -41,7 +41,15 @@ go into your sites directory, and type `zola serve`. You should see your new sit
 
 #### Theme Options
 ```toml
-# Add links to favicon
+navbar_items = [
+	{ url = "$BASE_URL/", name = "Home" },
+	{ url = "$BASE_URL/posts", name = "Posts" },
+	{ url = "$BASE_URL/docs", name = "Docs" },
+	{ url = "$BASE_URL/tags", name = "Tags" },
+	{ url = "$BASE_URL/categories", name = "Categories" },
+]
+
+# Add links to favicon, you can use https://realfavicongenerator.net/ to generate favicon for your site
 [extra.favicon]
 favicon_16x16 = "/icons/favicon-16x16.png"
 favicon_32x32 = "/icons/favicon-32x32.png"
@@ -54,10 +62,12 @@ webmanifest = "/icons/site.webmanifest"
 name = "DeepThought"
 avatar = "/images/avatar.png"
 
-# Social link setup
+# Social links
 [extra.social]
+email = <email_id>
 facebook = "<facebook_username>"
 github = "<github_username>"
+gitlab = "<gitlab_username>"
 keybase = "<keybase_username>"
 linkedin = "<linkedin_username>"
 stackoverflow = "<stackoverflow_userid>"
@@ -69,7 +79,7 @@ google = "<your_gtag>"
 
 # To add hyvor comments
 [extra.commenting]
-hyvor = "<your_website_id>"
+hyvor = "<your_hyvor_website_id>"
 
 # To enable mapbox maps
 [extra.mapbox]
